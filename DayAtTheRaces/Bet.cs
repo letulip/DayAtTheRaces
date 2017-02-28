@@ -12,14 +12,14 @@ namespace DayAtTheRaces
         public int Dog;
         public Guy Bettor;
 
-        public string Description()
-        {
+        //public string Description()
+        //{
 
-        }
+        //}
 
-        public int PayOut(int Winner)
-        {
+        //public int PayOut(int Winner)
+        //{
 
-        }
+        //}
     }
 }

@@ -28,7 +28,7 @@ namespace DayAtTheRaces
 
         public void UpdateLabels()
         {
-
+            
         }
 
         public void ClearBet()
@@ -36,10 +36,10 @@ namespace DayAtTheRaces
 
         }
 
-        public bool PlaceBet(int BetAmount, int DogToWin)
-        {
+        //public bool PlaceBet(int BetAmount, int DogToWin)
+        //{
 
-        }
+        //}
 
         public void Collect(int Winner)
         {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pbxRaceTrack = new System.Windows.Forms.PictureBox();
             this.pbxSantasLittleHelper = new System.Windows.Forms.PictureBox();
@@ -49,6 +50,7 @@
             this.rbtnBob = new System.Windows.Forms.RadioButton();
             this.rbtnJoe = new System.Windows.Forms.RadioButton();
             this.lblMinimumBet = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxRaceTrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSantasLittleHelper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLightning)).BeginInit();
@@ -140,7 +142,7 @@
             this.lblAlsBet.Name = "lblAlsBet";
             this.lblAlsBet.Size = new System.Drawing.Size(276, 20);
             this.lblAlsBet.TabIndex = 13;
-            this.lblAlsBet.Text = "Al\'s bet";
+            this.lblAlsBet.Text = "Al bets to nothing";
             // 
             // lblBobsBet
             // 
@@ -149,7 +151,7 @@
             this.lblBobsBet.Name = "lblBobsBet";
             this.lblBobsBet.Size = new System.Drawing.Size(276, 20);
             this.lblBobsBet.TabIndex = 12;
-            this.lblBobsBet.Text = "Bob\'s bet";
+            this.lblBobsBet.Text = "Bob bets to nothing";
             // 
             // lblJoesBet
             // 
@@ -158,7 +160,7 @@
             this.lblJoesBet.Name = "lblJoesBet";
             this.lblJoesBet.Size = new System.Drawing.Size(276, 20);
             this.lblJoesBet.TabIndex = 11;
-            this.lblJoesBet.Text = "Joe\'s bet";
+            this.lblJoesBet.Text = "Joe bets to nothing";
             // 
             // lblBets
             // 
@@ -306,6 +308,10 @@
             this.lblMinimumBet.TabIndex = 0;
             this.lblMinimumBet.Text = "Minimum bet: $0";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,6 +364,7 @@
         private System.Windows.Forms.Label lblAlsBet;
         private System.Windows.Forms.Label lblBobsBet;
         private System.Windows.Forms.Label lblJoesBet;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

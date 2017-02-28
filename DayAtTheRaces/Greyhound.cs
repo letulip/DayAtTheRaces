@@ -10,11 +10,11 @@ namespace DayAtTheRaces
     class Greyhound
     {
         public string Name;
-        public int StartingPosition;
-        public int RacetrackLength;
+        public int StartingPosition = 5;
+        public int RacetrackLength = 708;
         public PictureBox MyPictureBox;
-        public int Location = 0;
-        public Random rnd = new Random();
+        public int Location = 1;
+        //public Random rnd = new Random();
 
         public Greyhound()
         {
@@ -26,14 +26,25 @@ namespace DayAtTheRaces
             Name = name;
         }
 
-        public bool Run()
+        public bool Run(int location)
         {
+            Location = location;
+            MyPictureBox.Left += StartingPosition + Location;
 
+            if (MyPictureBox.Left >= MyPictureBox.Parent.Width - MyPictureBox.Width)
+            {
+                
+                return true;
+            }
+            else
+                return false;
+            
         }
 
         public void TakeStartingPosition()
         {
-
+            Location = 0;
+            MyPictureBox.Left = StartingPosition;
         }
     }
 }
