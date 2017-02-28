@@ -15,6 +15,7 @@ namespace DayAtTheRaces
         public Form1()
         {
             InitializeComponent();
+            lblMinimumBet.Text = "Minimum bet: $ " + numudBet.Value.ToString();
         }
         
         private void btnStartRace_Click(object sender, EventArgs e)
@@ -28,15 +29,15 @@ namespace DayAtTheRaces
         {
             if(lblBettorName.Text == "Joe")
             {
-                lblJoesBet.Text = numudBet.Value.ToString() + " Bucks to dog No. " + numudDogNumber.Value.ToString();
+                lblJoesBet.Text = "$ " + numudBet.Value.ToString() + " to dog No. " + numudDogNumber.Value.ToString();
             }
             if (lblBettorName.Text == "Bob")
             {
-                lblBobsBet.Text = numudBet.Value.ToString() + " Bucks to dog No. " + numudDogNumber.Value.ToString();
+                lblBobsBet.Text = "$ " + numudBet.Value.ToString() + " to dog No. " + numudDogNumber.Value.ToString();
             }
             if (lblBettorName.Text == "Al")
             {
-                lblAlsBet.Text = numudBet.Value.ToString() + " Bucks to dog No. " + numudDogNumber.Value.ToString();
+                lblAlsBet.Text = "$ " + numudBet.Value.ToString() + " to dog No. " + numudDogNumber.Value.ToString();
             }
         }
 

@@ -35,6 +35,10 @@
             this.pbxMcQuinn = new System.Windows.Forms.PictureBox();
             this.pbxRabbitSlayer = new System.Windows.Forms.PictureBox();
             this.gbxBettingParlor = new System.Windows.Forms.GroupBox();
+            this.lblAlsBet = new System.Windows.Forms.Label();
+            this.lblBobsBet = new System.Windows.Forms.Label();
+            this.lblJoesBet = new System.Windows.Forms.Label();
+            this.lblBets = new System.Windows.Forms.Label();
             this.numudDogNumber = new System.Windows.Forms.NumericUpDown();
             this.lblBucksOnDog = new System.Windows.Forms.Label();
             this.numudBet = new System.Windows.Forms.NumericUpDown();
@@ -45,10 +49,6 @@
             this.rbtnBob = new System.Windows.Forms.RadioButton();
             this.rbtnJoe = new System.Windows.Forms.RadioButton();
             this.lblMinimumBet = new System.Windows.Forms.Label();
-            this.lblBets = new System.Windows.Forms.Label();
-            this.lblJoesBet = new System.Windows.Forms.Label();
-            this.lblBobsBet = new System.Windows.Forms.Label();
-            this.lblAlsBet = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRaceTrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSantasLittleHelper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLightning)).BeginInit();
@@ -64,8 +64,8 @@
             this.pbxRaceTrack.Image = ((System.Drawing.Image)(resources.GetObject("pbxRaceTrack.Image")));
             this.pbxRaceTrack.Location = new System.Drawing.Point(4, 3);
             this.pbxRaceTrack.Name = "pbxRaceTrack";
-            this.pbxRaceTrack.Size = new System.Drawing.Size(600, 200);
-            this.pbxRaceTrack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbxRaceTrack.Size = new System.Drawing.Size(708, 200);
+            this.pbxRaceTrack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxRaceTrack.TabIndex = 0;
             this.pbxRaceTrack.TabStop = false;
             // 
@@ -128,10 +128,47 @@
             this.gbxBettingParlor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gbxBettingParlor.Location = new System.Drawing.Point(4, 210);
             this.gbxBettingParlor.Name = "gbxBettingParlor";
-            this.gbxBettingParlor.Size = new System.Drawing.Size(600, 155);
+            this.gbxBettingParlor.Size = new System.Drawing.Size(708, 155);
             this.gbxBettingParlor.TabIndex = 5;
             this.gbxBettingParlor.TabStop = false;
             this.gbxBettingParlor.Text = "Betting Parlor";
+            // 
+            // lblAlsBet
+            // 
+            this.lblAlsBet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAlsBet.Location = new System.Drawing.Point(205, 94);
+            this.lblAlsBet.Name = "lblAlsBet";
+            this.lblAlsBet.Size = new System.Drawing.Size(276, 20);
+            this.lblAlsBet.TabIndex = 13;
+            this.lblAlsBet.Text = "Al\'s bet";
+            // 
+            // lblBobsBet
+            // 
+            this.lblBobsBet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblBobsBet.Location = new System.Drawing.Point(205, 67);
+            this.lblBobsBet.Name = "lblBobsBet";
+            this.lblBobsBet.Size = new System.Drawing.Size(276, 20);
+            this.lblBobsBet.TabIndex = 12;
+            this.lblBobsBet.Text = "Bob\'s bet";
+            // 
+            // lblJoesBet
+            // 
+            this.lblJoesBet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblJoesBet.Location = new System.Drawing.Point(205, 41);
+            this.lblJoesBet.Name = "lblJoesBet";
+            this.lblJoesBet.Size = new System.Drawing.Size(276, 20);
+            this.lblJoesBet.TabIndex = 11;
+            this.lblJoesBet.Text = "Joe\'s bet";
+            // 
+            // lblBets
+            // 
+            this.lblBets.AutoSize = true;
+            this.lblBets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblBets.Location = new System.Drawing.Point(202, 20);
+            this.lblBets.Name = "lblBets";
+            this.lblBets.Size = new System.Drawing.Size(43, 16);
+            this.lblBets.TabIndex = 10;
+            this.lblBets.Text = "Bets:";
             // 
             // numudDogNumber
             // 
@@ -150,6 +187,7 @@
             this.numudDogNumber.Name = "numudDogNumber";
             this.numudDogNumber.Size = new System.Drawing.Size(49, 22);
             this.numudDogNumber.TabIndex = 9;
+            this.numudDogNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numudDogNumber.Value = new decimal(new int[] {
             1,
             0,
@@ -183,6 +221,7 @@
             this.numudBet.Name = "numudBet";
             this.numudBet.Size = new System.Drawing.Size(53, 22);
             this.numudBet.TabIndex = 7;
+            this.numudBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numudBet.Value = new decimal(new int[] {
             5,
             0,
@@ -192,7 +231,7 @@
             // btnStartRace
             // 
             this.btnStartRace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnStartRace.Location = new System.Drawing.Point(458, 48);
+            this.btnStartRace.Location = new System.Drawing.Point(561, 48);
             this.btnStartRace.Name = "btnStartRace";
             this.btnStartRace.Size = new System.Drawing.Size(103, 66);
             this.btnStartRace.TabIndex = 6;
@@ -267,48 +306,11 @@
             this.lblMinimumBet.TabIndex = 0;
             this.lblMinimumBet.Text = "Minimum bet: $0";
             // 
-            // lblBets
-            // 
-            this.lblBets.AutoSize = true;
-            this.lblBets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblBets.Location = new System.Drawing.Point(162, 20);
-            this.lblBets.Name = "lblBets";
-            this.lblBets.Size = new System.Drawing.Size(43, 16);
-            this.lblBets.TabIndex = 10;
-            this.lblBets.Text = "Bets:";
-            // 
-            // lblJoesBet
-            // 
-            this.lblJoesBet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblJoesBet.Location = new System.Drawing.Point(165, 41);
-            this.lblJoesBet.Name = "lblJoesBet";
-            this.lblJoesBet.Size = new System.Drawing.Size(245, 20);
-            this.lblJoesBet.TabIndex = 11;
-            this.lblJoesBet.Text = "Joe\'s bet";
-            // 
-            // lblBobsBet
-            // 
-            this.lblBobsBet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblBobsBet.Location = new System.Drawing.Point(165, 67);
-            this.lblBobsBet.Name = "lblBobsBet";
-            this.lblBobsBet.Size = new System.Drawing.Size(245, 20);
-            this.lblBobsBet.TabIndex = 12;
-            this.lblBobsBet.Text = "Bob\'s bet";
-            // 
-            // lblAlsBet
-            // 
-            this.lblAlsBet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAlsBet.Location = new System.Drawing.Point(165, 94);
-            this.lblAlsBet.Name = "lblAlsBet";
-            this.lblAlsBet.Size = new System.Drawing.Size(245, 20);
-            this.lblAlsBet.TabIndex = 13;
-            this.lblAlsBet.Text = "Al\'s bet";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 368);
+            this.ClientSize = new System.Drawing.Size(716, 368);
             this.Controls.Add(this.gbxBettingParlor);
             this.Controls.Add(this.pbxRabbitSlayer);
             this.Controls.Add(this.pbxMcQuinn);
