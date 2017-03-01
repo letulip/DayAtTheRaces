@@ -12,6 +12,18 @@ namespace DayAtTheRaces
         public int Dog;
         public Guy Bettor;
 
+        public Bet()
+        {
+
+        }
+
+        public Bet(int amount, int dog, Guy bettor)
+        {
+            Amount = amount;
+            Dog = dog;
+            Bettor = bettor;
+        }
+
         //public string Description()
         //{
 

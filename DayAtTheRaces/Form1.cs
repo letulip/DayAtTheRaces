@@ -15,18 +15,12 @@ namespace DayAtTheRaces
         public Form1()
         {
             InitializeComponent();
+            
             lblMinimumBet.Text = "Minimum bet: $ " + numudBet.Value.ToString();
-        }
+            rbtnJoe.Text = joe.Name + " has $" + joe.Cash;
+            rbtnBob.Text = bob.Name + " has $" + bob.Cash;
+            rbtnAl.Text = al.Name + " has $" + al.Cash;
 
-        Greyhound[] greyhounds = new Greyhound[4];
-        Random rnd = new Random();
-
-        Guy joe = new Guy("Joe", 50);
-        Guy bob = new Guy("Bob", 75);
-        Guy al = new Guy("Al", 45);
-
-        private void btnStartRace_Click(object sender, EventArgs e)
-        {
             for (int i = 0; i < 4; i++)
             {
                 greyhounds[i] = new Greyhound();
@@ -41,7 +35,24 @@ namespace DayAtTheRaces
             greyhounds[1].Name = "McQuinn";
             greyhounds[2].Name = "RabbitSlayer";
             greyhounds[3].Name = "SantasLittleHelper";
-            
+
+            guys[0] = joe;
+            guys[1] = bob;
+            guys[2] = al;
+        }
+
+        Greyhound[] greyhounds = new Greyhound[4];
+        Guy[] guys = new Guy[3];
+
+        Random rnd = new Random();
+        int TrackCash = 0;
+
+        Guy joe = new Guy("Joe", 50);
+        Guy bob = new Guy("Bob", 75);
+        Guy al = new Guy("Al", 45);        
+
+        private void btnStartRace_Click(object sender, EventArgs e)
+        {
             foreach (Greyhound g in greyhounds)
                 g.TakeStartingPosition();
 

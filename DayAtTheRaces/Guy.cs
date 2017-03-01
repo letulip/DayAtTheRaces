@@ -36,10 +36,19 @@ namespace DayAtTheRaces
 
         }
 
-        //public bool PlaceBet(int BetAmount, int DogToWin)
-        //{
-
-        //}
+        public bool PlaceBet(int BetAmount, int DogToWin)
+        {
+            if (Cash >= BetAmount)
+            {
+                Bet bet = new Bet(BetAmount, DogToWin, this);
+                return true;
+            }
+            else
+            {
+                MessageBox.Show(this.Name + " got not enough buks to bet!");
+                return false;
+            }
+        }
 
         public void Collect(int Winner)
         {
