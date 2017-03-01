@@ -20,32 +20,39 @@ namespace DayAtTheRaces
 
         }
 
-        public Guy(string name, int cash)
+        public Guy(string name, int cash, Label myLabel, RadioButton myRadioButton)
         {
             Name = name;
             Cash = cash;
+            MyBet = new Bet(0, 0, this);
+            MyLabel = myLabel;
+            MyRadioButton = myRadioButton;
+            UpdateLabels();
         }
 
         public void UpdateLabels()
         {
-            
+            MyLabel.Text = MyBet.Description();
+            MyRadioButton.Text = Name + " has $" + Cash;
         }
 
         public void ClearBet()
         {
-
+            this.MyBet.Amount = 0;
+            MyLabel.Text = MyBet.Description();
         }
 
-        public bool PlaceBet(int BetAmount, int DogToWin)
+        public bool PlaceBet(int BetAmount, int DogToWin, string dogName)
         {
             if (Cash >= BetAmount)
             {
                 Bet bet = new Bet(BetAmount, DogToWin, this);
+                MyLabel.Text = bet.Description(dogName);
                 return true;
             }
             else
             {
-                MessageBox.Show(this.Name + " got not enough buks to bet!");
+                this.MyLabel.Text = this.Name + " got not enough bucks to bet!";
                 return false;
             }
         }

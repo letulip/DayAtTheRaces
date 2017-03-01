@@ -17,28 +17,27 @@ namespace DayAtTheRaces
             InitializeComponent();
             
             lblMinimumBet.Text = "Minimum bet: $ " + numudBet.Value.ToString();
-            rbtnJoe.Text = joe.Name + " has $" + joe.Cash;
-            rbtnBob.Text = bob.Name + " has $" + bob.Cash;
-            rbtnAl.Text = al.Name + " has $" + al.Cash;
+            //rbtnJoe.Text = joe.Name + " has $" + joe.Cash;
+            //rbtnBob.Text = bob.Name + " has $" + bob.Cash;
+            //rbtnAl.Text = al.Name + " has $" + al.Cash;
 
-            for (int i = 0; i < 4; i++)
-            {
-                greyhounds[i] = new Greyhound();
-            }
+            Guy joe = new Guy("Joe", 50, lblJoesBet, rbtnJoe);
+            Guy bob = new Guy("Bob", 75, lblBobsBet, rbtnBob);
+            Guy al = new Guy("Al", 45, lblAlsBet, rbtnAl);
 
-            greyhounds[0].MyPictureBox = pbxLightning;
-            greyhounds[1].MyPictureBox = pbxMcQuinn;
-            greyhounds[2].MyPictureBox = pbxRabbitSlayer;
-            greyhounds[3].MyPictureBox = pbxSantasLittleHelper;
+            Greyhound light = new Greyhound("Lightning", pbxLightning);
+            Greyhound quinn = new Greyhound("McQuinn", pbxMcQuinn);
+            Greyhound slayer = new Greyhound("Rabbit Slayer", pbxRabbitSlayer);
+            Greyhound helper = new Greyhound("Santa's Little Helper", pbxSantasLittleHelper);
 
-            greyhounds[0].Name = "Lightning";
-            greyhounds[1].Name = "McQuinn";
-            greyhounds[2].Name = "RabbitSlayer";
-            greyhounds[3].Name = "SantasLittleHelper";
-
+            greyhounds[0] = light;
+            greyhounds[1] = quinn;
+            greyhounds[2] = slayer;
+            greyhounds[3] = helper;
+            
             guys[0] = joe;
             guys[1] = bob;
-            guys[2] = al;
+            guys[2] = al;            
         }
 
         Greyhound[] greyhounds = new Greyhound[4];
@@ -46,11 +45,7 @@ namespace DayAtTheRaces
 
         Random rnd = new Random();
         int TrackCash = 0;
-
-        Guy joe = new Guy("Joe", 50);
-        Guy bob = new Guy("Bob", 75);
-        Guy al = new Guy("Al", 45);        
-
+        
         private void btnStartRace_Click(object sender, EventArgs e)
         {
             foreach (Greyhound g in greyhounds)
@@ -64,17 +59,17 @@ namespace DayAtTheRaces
 
         private void btnBets_Click(object sender, EventArgs e)
         {
-            if(lblBettorName.Text == "Joe")
+            if (lblBettorName.Text == "Joe")
             {
-                lblJoesBet.Text = "$ " + numudBet.Value.ToString() + " to dog No. " + numudDogNumber.Value.ToString();
+                guys[0].PlaceBet((int)numudBet.Value, (int)numudDogNumber.Value-1, greyhounds[(int)numudDogNumber.Value-1].Name);
             }
             if (lblBettorName.Text == "Bob")
             {
-                lblBobsBet.Text = "$ " + numudBet.Value.ToString() + " to dog No. " + numudDogNumber.Value.ToString();
+                guys[1].PlaceBet((int)numudBet.Value, (int)numudDogNumber.Value-1, greyhounds[(int)numudDogNumber.Value-1].Name);
             }
             if (lblBettorName.Text == "Al")
             {
-                lblAlsBet.Text = "$ " + numudBet.Value.ToString() + " to dog No. " + numudDogNumber.Value.ToString();
+                guys[2].PlaceBet((int)numudBet.Value, (int)numudDogNumber.Value-1, greyhounds[(int)numudDogNumber.Value-1].Name);
             }
         }
 
@@ -100,9 +95,14 @@ namespace DayAtTheRaces
                 if (greyhounds[i].Run(rnd.Next(5, 15)))
                 {
                     timer1.Stop();
-                    MessageBox.Show(greyhounds[i].Name + " wins!");
+                    if (MessageBox.Show(greyhounds[i].Name + " wins!") == DialogResult.OK)
+                    {
+                        foreach (Guy g in guys)
+                            g.ClearBet();
+
+                        btnBets.Show();
+                    }
                 }
-                    
             }
         }
     }

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace DayAtTheRaces
 {
-    class Greyhound
+    public class Greyhound
     {
         public string Name;
         public int StartingPosition = 5;
@@ -21,9 +21,10 @@ namespace DayAtTheRaces
 
         }
 
-        public Greyhound(string name)
+        public Greyhound(string name, PictureBox myPictureBox)
         {
             Name = name;
+            MyPictureBox = myPictureBox;
         }
 
         public bool Run(int location)
