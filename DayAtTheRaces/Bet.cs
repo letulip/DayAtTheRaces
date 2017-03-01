@@ -40,9 +40,16 @@ namespace DayAtTheRaces
                 return Bettor.Name + " hasn't placed a bet";
         }
 
-        //public int PayOut(int Winner)
-        //{
-
-        //}
+        public int PayOut(int Winner)
+        {
+            if(Winner == Dog)
+            {
+                return Amount * 2;
+            }
+            else
+            {
+                return -Amount;
+            }
+        }
     }
 }

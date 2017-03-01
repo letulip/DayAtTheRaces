@@ -46,8 +46,8 @@ namespace DayAtTheRaces
         {
             if (Cash >= BetAmount)
             {
-                Bet bet = new Bet(BetAmount, DogToWin, this);
-                MyLabel.Text = bet.Description(dogName);
+                MyBet = new Bet(BetAmount, DogToWin, this);
+                MyLabel.Text = MyBet.Description(dogName);
                 return true;
             }
             else
@@ -59,7 +59,8 @@ namespace DayAtTheRaces
 
         public void Collect(int Winner)
         {
-
+            Cash += MyBet.PayOut(Winner);
+            UpdateLabels();
         }
     }
 }

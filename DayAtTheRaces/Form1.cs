@@ -44,7 +44,6 @@ namespace DayAtTheRaces
         Guy[] guys = new Guy[3];
 
         Random rnd = new Random();
-        int TrackCash = 0;
         
         private void btnStartRace_Click(object sender, EventArgs e)
         {
@@ -95,10 +94,14 @@ namespace DayAtTheRaces
                 if (greyhounds[i].Run(rnd.Next(5, 15)))
                 {
                     timer1.Stop();
+                    
                     if (MessageBox.Show(greyhounds[i].Name + " wins!") == DialogResult.OK)
                     {
                         foreach (Guy g in guys)
+                        {
+                            g.Collect(i);
                             g.ClearBet();
+                        }
 
                         btnBets.Show();
                     }
